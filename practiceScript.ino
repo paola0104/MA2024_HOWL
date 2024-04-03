@@ -12,17 +12,17 @@ void setup() {
 void loop() {
   if (BLINKLOOP <= 2) // checking variable amount to see how many times to loop
   {
-  delay(300); 
+  delay(3400); 
   digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(300);                      // wait for a second
+  delay(3400);                      // wait for a second
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW  
   BLINKLOOP ++;
   }
   if (BLINKLOOP >2)
   {
-  delay(300); 
+  delay(3400); 
   digitalWrite(LED_BUILTIN, HIGH);  // turn the LED on (HIGH is the voltage level)
-  delay(900);                      // wait for a second
+  delay(9400);                      // wait for a second
   digitalWrite(LED_BUILTIN, LOW);   // turn the LED off by making the voltage LOW  
   BLINKLOOP ++;
   }
