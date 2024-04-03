@@ -1,2 +1,2 @@
-# MA2024_HOWL
+# Howl's Moving Servos
 Create an enclosure 
