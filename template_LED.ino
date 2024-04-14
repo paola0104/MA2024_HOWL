@@ -1,3 +1,6 @@
+// Works: It uses copper tape to trigger an LED light. The object must continuously be pressed into the LED light for the LED
+// light to remain on 
+
 /*
   Button
 
