@@ -4,23 +4,31 @@ const int switch_dog = 2; // the number of the cooper tape
 const int switch_heart = 4; // the number of the cooper tape where the user puts the heart
 
 const int switch_led = 7; // the number of the cooper tape where sophie is placed
-const int blue_led = 13; // pin where the blue led is placed
+const int blue_led = 6; // pin where the blue led is placed
+
+const int switch_trap_heart = 5;
+
 //const int white_led = 14; // pin where the white led is placed
 
 int push_led = 0;
 
 Servo myservo;  // create servo object to control a servo
 Servo fianlly;  // servo that moves the final challenge, placing the heart
+Servo bush; // servo that reveals the heart 
 
 void setup() {
   pinMode(switch_dog, OUTPUT); // dog placement
   pinMode(switch_heart, OUTPUT); // heart placement 
+  pinMode(switch_trap_heart, OUTPUT);
 
   myservo.attach(9);  // attaches the servo on pin 9 to the servo object
   myservo.write(90);   //starting angle (door closed)
 
   fianlly.attach(8); // where the servo is attached
   fianlly.write(180); // starting angle
+
+  bush.attach(3);
+  bush.write(180);
 
   pinMode(blue_led, OUTPUT); // initialize the blue_led as the output
   pinMode(switch_led, INPUT); // initialize the switch_leg as the input
@@ -35,6 +43,12 @@ void loop() {
   if (digitalRead(switch_heart) == HIGH){
     fianlly.write(0); // turn the platform 180, keep it at that if the heart is removed
   } 
+//
+  if (digitalRead(switch_trap_heart) == HIGH){
+    bush.write(180);
+  } else{
+    bush.write(150);
+  }
 
   if (push_led == HIGH){
     digitalWrite(blue_led, HIGH);
